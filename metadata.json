@@ -1,0 +1,6 @@
+{
+  "name": "FIELD SHIFT – Adapting Farms with NASA Data",
+  "description": "Turning Earth Observations into Climate-Resilient Farming Decisions. An explainable, NASA-data-powered crop rotation decision-support system for Karnataka agriculture.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

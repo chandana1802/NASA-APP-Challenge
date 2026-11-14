@@ -1,0 +1,1455 @@
+# MASTER DEVELOPMENT PROMPT – FIELD SHIFT
+
+## 1. PROJECT IDENTITY
+
+Build a complete, professional, responsive, full-stack web application named:
+
+**FIELD SHIFT – Adapting Farms with NASA Data**
+
+Tagline: *Turning Earth Observations into Climate-Resilient Farming Decisions.*
+
+This application is being developed for the 2026 NASA challenge.
+
+The application must address the actual NASA challenge: helping farmers explore crop-rotation strategies that may improve soil health, conserve water, reduce environmental risks and strengthen agricultural resilience under changing climate conditions.
+
+IMPORTANT: This is NOT a generic weather forecasting application, NOT a simple crop recommendation application and NOT just a satellite monitoring dashboard.
+
+The main purpose is to create an explainable, NASA-data-powered crop rotation decision-support system.
+
+### Target users
+1. Farmers.
+2. Agricultural researchers.
+3. Agricultural experts and administrators.
+
+### Initial geographical focus
+Karnataka, India.
+
+The architecture must allow expansion to other Indian states and international regions in the future.
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use the following technology stack.
+
+### Frontend
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Vite, if supported by the selected project setup.
+- Lucide React icons.
+- Recharts for data visualization.
+- Leaflet with OpenStreetMap for interactive maps.
+
+### Backend
+- Supabase.
+- Supabase PostgreSQL database.
+- Supabase Authentication.
+- Supabase Storage.
+- Supabase Edge Functions.
+- Supabase Row Level Security.
+
+### Artificial Intelligence
+- Google Gemini API for natural-language explanations and agricultural insights.
+- Python.
+- Scikit-learn.
+- Pandas.
+- NumPy.
+- FastAPI for the separate machine-learning service.
+
+### External data
+Integrate NASA Earth observation and environmental datasets.
+
+### Development environment
+- Google AI Studio for the primary application.
+- Replit for the Python machine-learning service.
+- GitHub for source-code version control.
+
+Do not use MySQL or Firebase. Supabase must be the primary database and backend.
+
+---
+
+# 3. APPLICATION DESIGN AND USER EXPERIENCE
+
+Create a premium agricultural technology platform.
+
+### Visual theme
+Use:
+- Forest green.
+- Fresh agricultural green.
+- White.
+- Soft beige.
+- Earth brown.
+- Subtle environmental gradients.
+
+### Design requirements
+- Modern professional dashboard.
+- Clean typography.
+- Rounded dashboard cards.
+- Subtle shadows.
+- Beautiful charts.
+- Intuitive navigation.
+- Responsive mobile layout.
+- Desktop and tablet compatibility.
+- Consistent spacing.
+- Accessible colors and readable text.
+
+Avoid excessive animations, unnecessary gradients, cluttered dashboards and generic admin-template styling.
+
+Use agricultural imagery and relevant satellite-map visualizations where appropriate.
+
+The application should look suitable for a NASA challenge demonstration and an agricultural research presentation.
+
+---
+
+# 4. LANDING PAGE
+
+Create a professional landing page.
+
+Include:
+
+1. Field Shift logo and name.
+2. Tagline: Adapting Farms with NASA Data.
+3. Hero section showing satellite-based agricultural monitoring.
+4. Explanation of the agricultural problem.
+5. Explanation of our solution.
+6. NASA Earth observation data integration section.
+7. Crop rotation comparison section.
+8. AI and machine-learning section.
+9. Farmer benefits.
+10. Researcher benefits.
+11. How Field Shift works.
+12. Login and registration buttons.
+13. Footer with NASA dataset attribution and project information.
+
+Hero heading:
+
+"Build Resilient Farms with the Power of NASA Earth Observations."
+
+Hero description:
+
+"Field Shift combines satellite observations, local soil information, crop characteristics and artificial intelligence to help farmers explore sustainable crop rotation strategies."
+
+Primary buttons:
+- Explore Field Shift.
+- Get Started.
+- Researcher Access.
+
+---
+
+# 5. AUTHENTICATION AND USER MANAGEMENT
+
+Use Supabase Authentication.
+
+Create:
+
+- Farmer registration.
+- Researcher registration.
+- Login.
+- Logout.
+- Forgot password.
+- Password reset.
+- User profile.
+- Role-based access.
+- Protected application routes.
+
+Registration fields:
+
+- Full name.
+- Email.
+- Password.
+- User role.
+- Phone number (optional).
+- District.
+- State.
+- Preferred language.
+
+Supported initial languages:
+- English.
+- Kannada.
+
+After login, redirect users to their respective dashboards.
+
+Farmer users must access farmer-specific functions.
+
+Researchers must access research and analytical functions.
+
+Administrators must have separate administrative permissions.
+
+Never trust a user-selected role submitted directly from the frontend. Enforce role authorization using protected database policies and trusted server-side logic.
+
+---
+
+# 6. FARMER DASHBOARD
+
+Build a simple and user-friendly farmer dashboard.
+
+The farmer dashboard should display:
+
+### Overview cards
+- Registered farms.
+- Selected farm.
+- Current temperature.
+- Recent rainfall.
+- Soil moisture observation.
+- Vegetation health indicator.
+- Environmental risk status.
+
+### Main sections
+1. My Farms.
+2. Soil Profile.
+3. NASA Environmental Data.
+4. Crop Rotation Explorer.
+5. Farmer Priorities.
+6. Irrigation Advisory.
+7. Climate Risk Alerts.
+8. Reports.
+
+Use simple agricultural language.
+
+Do not overwhelm farmers with technical scientific terminology.
+
+Provide short explanations and optional detailed scientific information.
+
+---
+
+# 7. RESEARCHER DASHBOARD
+
+Build a separate professional researcher workspace.
+
+Include:
+
+1. Multiple farm comparison.
+2. Historical climate analysis.
+3. Satellite observation analysis.
+4. Soil profile comparison.
+5. Crop rotation scenario comparison.
+6. Environmental risk analysis.
+7. Crop characteristic database.
+8. Research reports.
+9. Dataset download.
+10. Model validation.
+11. Model uncertainty.
+12. Prediction history.
+
+Provide interactive charts, filters, tables and date selection.
+
+Researchers should be able to compare different Karnataka districts and agricultural regions.
+
+---
+
+# 8. NASA EARTH OBSERVATION DATA INTEGRATION
+
+This is one of the most important modules.
+
+Integrate NASA Earth observation datasets through their documented APIs and data services.
+
+Do not create fake NASA data.
+
+### A. NASA SMAP
+
+Purpose:
+Soil moisture observations.
+
+Use for:
+- Surface soil moisture analysis.
+- Root-zone moisture information where supported by the selected product.
+- Historical moisture trends.
+- Moisture anomaly analysis.
+- Identifying possible water-stress conditions.
+
+Display:
+- Soil moisture values.
+- Units.
+- Observation dates.
+- Product name.
+- Spatial resolution.
+- Missing-data information.
+
+### B. NASA GPM IMERG
+
+Purpose:
+Satellite-based precipitation monitoring.
+
+Use for:
+- Rainfall trends.
+- Seasonal rainfall analysis.
+- Extreme precipitation events.
+- Rainfall anomalies.
+- Dry-spell analysis.
+
+Display rainfall in millimeters.
+
+### C. NASA ECOSTRESS
+
+Purpose:
+Land surface temperature and evapotranspiration observations.
+
+Use for:
+- Land surface temperature analysis.
+- Evapotranspiration.
+- Vegetation water stress assessment.
+- Water-demand indicators.
+
+Clearly distinguish land surface temperature from standard air temperature.
+
+### D. NASA MODIS
+
+Purpose:
+Vegetation monitoring.
+
+Use for:
+- NDVI.
+- EVI where available.
+- Vegetation health trends.
+- Seasonal vegetation changes.
+- Vegetation stress indicators.
+
+### E. NASA Landsat
+
+Purpose:
+Detailed land surface observations.
+
+Use for:
+- Vegetation index analysis.
+- Land cover monitoring.
+- Field-level vegetation patterns where spatial resolution and field size permit.
+- Historical land changes.
+
+### F. NASA POWER
+
+Purpose:
+Meteorological and solar environmental information.
+
+Use for:
+- Air temperature.
+- Rainfall.
+- Relative humidity where available.
+- Solar radiation.
+- Historical climate analysis.
+
+### G. NASA GRACE and GRACE-FO
+
+Purpose:
+Long-term terrestrial water-storage analysis.
+
+Use for:
+- Regional water-storage trends.
+- Long-term water availability context.
+- Groundwater-related water-storage indicators.
+
+Do not represent GRACE data as direct farm-level groundwater measurements.
+
+### H. NASA SRTM
+
+Purpose:
+Elevation and terrain information.
+
+Use for:
+- Elevation.
+- Terrain variation.
+- Slope-related analysis.
+- Potential erosion-risk indicators.
+
+### NASA data integration rules
+
+For each dataset:
+- Use the official NASA documentation.
+- Implement real API or documented data-service connections.
+- Record dataset name.
+- Record observation date.
+- Record units.
+- Record spatial resolution.
+- Record temporal resolution.
+- Record source and retrieval timestamp.
+- Handle unavailable observations.
+- Handle API errors.
+- Handle rate limits.
+- Cache suitable responses.
+- Avoid unnecessary duplicate requests.
+
+Do not assume every NASA dataset provides a simple point-coordinate API. Use the appropriate official data service or authenticated data access method for each dataset.
+
+Where authentication is required, implement the required server-side authentication securely.
+
+Provide a data-source information panel explaining what each dataset measures and its limitations.
+
+---
+
+# 9. INTERACTIVE KARNATAKA FARM MAP
+
+Use Leaflet and OpenStreetMap.
+
+Create an interactive Karnataka map.
+
+Features:
+
+1. Karnataka district selection.
+2. Taluk selection.
+3. GPS-based farm location.
+4. Manual coordinate entry.
+5. Map-based farm selection.
+6. Farm boundary support where available.
+7. Multiple farm markers.
+8. Selected farm information.
+9. Environmental map layers.
+10. Historical date selection.
+
+Map layers should include:
+
+- Rainfall.
+- Soil moisture.
+- Vegetation index.
+- Land surface temperature.
+- Elevation.
+- Environmental risk indicators.
+
+Display a legend and source information for each layer.
+
+Do not create fake satellite map tiles.
+
+If an observation layer is unavailable, display a clear unavailable-data message.
+
+Store farm coordinates in Supabase.
+
+---
+
+# 10. LOCAL SOIL PROFILE MODULE
+
+Allow farmers and researchers to enter soil information.
+
+Fields:
+
+- Soil type.
+- Soil pH.
+- Nitrogen.
+- Phosphorus.
+- Potassium.
+- Organic carbon.
+- Soil texture.
+- Soil depth where known.
+- Water availability.
+- Soil test date.
+- Irrigation type.
+- Additional notes.
+
+Support soil types such as:
+- Red soil.
+- Black soil.
+- Alluvial soil.
+- Lateritic soil.
+- Sandy soil.
+- Clay soil.
+- Loamy soil.
+
+Allow uploading soil-test reports through Supabase Storage.
+
+Clearly identify whether information comes from:
+- Laboratory soil test.
+- Farmer-entered information.
+- Government or research database.
+- Model-derived estimate.
+
+Never treat missing soil information as a measured value.
+
+Allow users to update soil profiles.
+
+---
+
+# 11. CROP CHARACTERISTICS DATABASE
+
+Build a crop database suitable for Karnataka.
+
+Initially include examples such as:
+
+- Paddy.
+- Ragi.
+- Maize.
+- Sugarcane.
+- Groundnut.
+- Green gram.
+- Black gram.
+- Red gram.
+- Horse gram.
+- Cowpea.
+- Soybean.
+- Sunflower.
+- Sorghum.
+
+For every crop, store:
+
+1. Crop name.
+2. Scientific name where available.
+3. Growing season.
+4. Growing duration.
+5. Water requirement.
+6. Rooting characteristics.
+7. Nitrogen-fixing potential.
+8. Nutrient requirements.
+9. Soil suitability.
+10. Drought tolerance.
+11. Heat tolerance.
+12. Erosion protection.
+13. Organic matter contribution.
+14. Pest and disease considerations.
+15. Market suitability.
+16. Forage potential.
+
+Use validated agricultural information from reliable agricultural sources.
+
+Do not invent crop characteristics.
+
+Allow researchers and authorized administrators to maintain the crop database.
+
+---
+
+# 12. FARMER PRIORITIES AND CONSTRAINTS
+
+Allow farmers to specify their priorities.
+
+Priority options:
+
+- Water conservation.
+- Improving soil fertility.
+- Increasing organic matter.
+- Reducing soil erosion.
+- Improving crop diversity.
+- Reducing pest and disease risks.
+- Increasing farm income.
+- Forage production.
+- Climate resilience.
+- Market suitability.
+
+Additional constraints:
+
+- Available irrigation.
+- Available farm equipment.
+- Available labour.
+- Budget.
+- Market access.
+- Existing crop commitments.
+- Preferred growing seasons.
+
+Allow users to rank priorities.
+
+Use these preferences when comparing crop rotation strategies.
+
+Do not assume every farmer has the same goals.
+
+Save priorities in Supabase.
+
+---
+
+# 13. MAIN FEATURE: AI-POWERED CROP ROTATION EXPLORER
+
+This is the most important feature of Field Shift.
+
+Build a crop rotation comparison engine.
+
+The application MUST compare at least three strategies, including the existing crop rotation.
+
+### Strategy A – Existing Rotation
+
+Represent the farmer's current crop sequence.
+
+Allow users to enter crops and seasons.
+
+This is the baseline for comparison.
+
+### Strategy B – Alternative Rotation
+
+Suggest a rotation that may improve nutrient cycling.
+
+Consider:
+- Legumes.
+- Nitrogen-fixing potential.
+- Crop diversification.
+- Soil-cover opportunities.
+- Nutrient cycling.
+
+### Strategy C – Climate-Resilient Rotation
+
+Suggest a rotation that may better align with local environmental conditions.
+
+Consider:
+- Drought-tolerant crops.
+- Lower water-demand crops.
+- Deep-rooting crops.
+- Cover crops.
+- Seasonal rainfall.
+- Soil moisture.
+- Erosion protection.
+
+### Comparison criteria
+
+For each strategy evaluate:
+
+1. Water demand.
+2. Nutrient cycling.
+3. Nitrogen contribution.
+4. Soil-cover potential.
+5. Erosion reduction potential.
+6. Organic matter contribution.
+7. Rooting characteristics.
+8. Pest-cycle disruption.
+9. Growing-season compatibility.
+10. Drought resilience.
+11. Heat resilience.
+12. Market suitability.
+13. Farmer priorities.
+
+### Comparison results
+
+Display:
+
+- Existing rotation.
+- Alternative rotation.
+- Climate-resilient rotation.
+- Crop sequence by season.
+- Potential benefits.
+- Possible disadvantages.
+- Supporting NASA observations.
+- Soil information used.
+- Crop characteristics considered.
+- Farmer priorities considered.
+- Missing information.
+- Confidence and uncertainty.
+- Local expert validation requirements.
+
+Use comparative charts and a clear explanation.
+
+Allow users to modify their priorities and recalculate the comparison.
+
+IMPORTANT:
+Do not automatically declare one rotation the best option without explaining its assumptions.
+
+The recommendation engine must consider local soil, crop calendars, climate, farmer constraints and uncertainty.
+
+---
+
+# 14. ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+Create a modular machine-learning architecture.
+
+The Python machine-learning service will be developed and deployed separately using Replit.
+
+Use FastAPI to expose secure prediction endpoints.
+
+### Model 1: Climate Risk Assessment
+
+Analyze:
+- Rainfall variability.
+- Temperature anomalies.
+- Soil moisture anomalies.
+- Dry-spell duration.
+- Heat stress indicators.
+- Extreme rainfall patterns.
+
+Outputs:
+- Drought-risk indicator.
+- Heat-stress indicator.
+- Excess rainfall indicator.
+- Climate vulnerability assessment.
+
+### Model 2: Crop Suitability Analysis
+
+Use:
+- Soil characteristics.
+- Historical climate.
+- Crop requirements.
+- Growing season.
+- Water availability.
+
+Output:
+- Candidate crop suitability.
+- Suitability explanation.
+- Missing information.
+- Uncertainty.
+
+### Model 3: Crop Rotation Evaluation
+
+Evaluate alternative crop sequences using:
+- Nutrient cycling.
+- Nitrogen-fixing potential.
+- Water demand.
+- Soil-cover potential.
+- Crop diversity.
+- Pest-cycle interruption.
+- Farmer preferences.
+- Climate conditions.
+
+Use a transparent multi-criteria decision analysis approach as the initial strategy-ranking engine.
+
+Use machine learning only where suitable training data and validated labels exist.
+
+### Machine-learning requirements
+
+- Separate training and testing data.
+- Use historical data.
+- Avoid data leakage.
+- Evaluate using appropriate metrics.
+- Report model limitations.
+- Show confidence or uncertainty appropriately.
+- Store model version.
+- Record prediction timestamp.
+- Preserve reproducibility.
+
+Do not invent model accuracy or claim scientific validation without testing.
+
+Do not use Gemini as a replacement for scientific calculations.
+
+Gemini may explain verified analysis in simple language, but the underlying agricultural evaluation must come from the data and validated calculation logic.
+
+---
+
+# 15. DATA FUSION AND SCIENTIFIC VALIDATION
+
+Combine NASA observations with local agricultural information.
+
+Account for different spatial and temporal resolutions.
+
+Create a data-processing pipeline that:
+
+1. Retrieves available observations.
+2. Validates coordinates.
+3. Converts units where necessary.
+4. Handles missing values.
+5. Aligns observation dates.
+6. Aggregates data to suitable common time intervals.
+7. Records spatial resolution.
+8. Documents interpolation or resampling.
+9. Preserves original observations.
+10. Generates analytical features.
+
+Do not silently combine measurements with different spatial resolutions.
+
+For example:
+- SMAP observations are not equivalent to field-level soil measurements.
+- GRACE observations are regional water-storage information.
+- ECOSTRESS land surface temperature is not the same as air temperature.
+- MODIS NDVI is an indicator of vegetation conditions, not a direct measurement of crop yield.
+
+Provide a data-quality indicator.
+
+Include an information-gap panel for each farm.
+
+---
+
+# 16. EXPLAINABLE FARMING INSIGHTS
+
+Create an AI insight section.
+
+Explain scientific concepts in understandable language.
+
+Include:
+
+- Soil moisture anomaly.
+- Evapotranspiration.
+- NDVI.
+- EVI.
+- Rainfall anomaly.
+- Vegetation stress.
+- Heat stress.
+- Drought risk.
+- Water balance.
+- Crop rotation.
+- Nitrogen fixation.
+- Organic matter.
+
+Example explanation:
+
+"Your selected field experienced lower rainfall than its historical seasonal average. Consider exploring rotation strategies with lower water demand. Actual suitability depends on your soil profile, irrigation availability and local crop calendar."
+
+Do not create unsupported claims.
+
+Every insight should provide:
+- What was observed.
+- Which dataset was used.
+- Observation period.
+- Why it matters.
+- Possible action.
+- Limitations.
+
+---
+
+# 17. RESEARCHER ANALYTICS
+
+Create a detailed research workspace.
+
+Include:
+
+1. Historical rainfall charts.
+2. Temperature trends.
+3. Soil moisture trends.
+4. Vegetation index trends.
+5. Evapotranspiration trends.
+6. Seasonal comparisons.
+7. Multi-farm comparisons.
+8. Rotation scenario comparisons.
+9. Model performance.
+10. Data quality.
+11. Missing observations.
+12. CSV export.
+13. Research report generation.
+
+Allow researchers to filter by:
+- District.
+- Taluk.
+- Farm.
+- Dataset.
+- Crop.
+- Date range.
+- Rotation strategy.
+
+---
+
+# 18. ALERTS AND ADVISORIES
+
+Create a risk and advisory system.
+
+Possible alerts:
+
+- Prolonged dry spell.
+- Low observed soil moisture.
+- Extreme rainfall.
+- High temperature.
+- Vegetation stress.
+- Potential erosion vulnerability.
+- Water-storage decline at regional scale.
+
+Every alert must include:
+- Severity.
+- Observation date.
+- Source dataset.
+- Affected location.
+- Explanation.
+- Suggested action.
+- Uncertainty.
+
+Do not label an alert as a confirmed crop disease or confirmed drought without suitable evidence.
+
+---
+
+# 19. REPORT GENERATION
+
+Allow farmers and researchers to generate downloadable reports.
+
+A report should include:
+
+1. Farm information.
+2. Location.
+3. Soil profile.
+4. NASA datasets used.
+5. Environmental conditions.
+6. Existing crop rotation.
+7. Alternative rotation strategies.
+8. Comparative analysis.
+9. Potential soil-health benefits.
+10. Water-use considerations.
+11. Climate risks.
+12. Farmer priorities.
+13. Information gaps.
+14. Uncertainty.
+15. Recommendations for local expert review.
+
+Provide PDF and CSV export options.
+
+---
+
+# 20. SUPABASE DATABASE DESIGN
+
+Use Supabase PostgreSQL.
+
+Create the following database tables and relationships.
+
+### profiles
+- id.
+- full_name.
+- role.
+- phone.
+- preferred_language.
+- created_at.
+
+### farms
+- id.
+- user_id.
+- farm_name.
+- district.
+- taluk.
+- latitude.
+- longitude.
+- area.
+- area_unit.
+- created_at.
+
+### soil_profiles
+- id.
+- farm_id.
+- soil_type.
+- ph.
+- nitrogen.
+- phosphorus.
+- potassium.
+- organic_carbon.
+- soil_texture.
+- water_availability.
+- source.
+- tested_at.
+
+### crop_catalog
+- id.
+- crop_name.
+- scientific_name.
+- growing_season.
+- growing_duration.
+- water_requirement.
+- rooting_depth.
+- nitrogen_fixing.
+- drought_tolerance.
+- heat_tolerance.
+- erosion_protection.
+- organic_matter_contribution.
+- pest_considerations.
+- market_suitability.
+
+### farmer_priorities
+- id.
+- farm_id.
+- water_conservation.
+- soil_fertility.
+- erosion_control.
+- organic_matter.
+- income.
+- climate_resilience.
+- other_constraints.
+
+### nasa_observations
+- id.
+- farm_id.
+- dataset.
+- parameter.
+- value.
+- unit.
+- observation_date.
+- spatial_resolution.
+- temporal_resolution.
+- source_url.
+- quality_flag.
+- created_at.
+
+### rotation_scenarios
+- id.
+- farm_id.
+- scenario_name.
+- scenario_type.
+- explanation.
+- evaluation_results.
+- limitations.
+- created_at.
+
+### rotation_items
+- id.
+- scenario_id.
+- crop_id.
+- season.
+- year.
+- sequence_order.
+
+### ml_predictions
+- id.
+- farm_id.
+- model_name.
+- model_version.
+- prediction_type.
+- prediction_result.
+- confidence_information.
+- input_summary.
+- created_at.
+
+### reports
+- id.
+- user_id.
+- farm_id.
+- report_name.
+- file_path.
+- created_at.
+
+Create appropriate:
+- Primary keys.
+- Foreign keys.
+- Indexes.
+- Data types.
+- Constraints.
+- Timestamps.
+
+Create SQL migrations in the project repository.
+
+Enable Row Level Security on all user-specific tables.
+
+Implement policies so that:
+- Users can access their own profiles.
+- Farmers can access their own farms.
+- Farmers can access their own soil profiles.
+- Farmers can access their own priorities.
+- Users cannot access another user's private information.
+- Researchers receive access only to explicitly authorized research data.
+- Administrative permissions are verified server-side.
+
+Do not expose private farm records through public database queries.
+
+Do not allow the frontend to bypass RLS.
+
+---
+
+# 21. API SECURITY AND SECRET MANAGEMENT
+
+SECURITY IS MANDATORY.
+
+Never hardcode API keys, tokens, passwords or secret credentials in frontend source code.
+
+Never expose privileged credentials in browser JavaScript.
+
+### Supabase credentials
+
+The following frontend variables may be used:
+
+VITE_SUPABASE_URL
+
+VITE_SUPABASE_PUBLISHABLE_KEY
+
+Use the current Supabase publishable key, or the legacy anon key only if the project uses that configuration.
+
+These keys are designed for client access and must always be protected by RLS.
+
+Never place the Supabase service-role key or secret key in frontend code.
+
+### Gemini API
+
+Store the Gemini API key in server-side environment secrets.
+
+Use server-side Node.js routes or protected Supabase Edge Functions for Gemini requests.
+
+Never expose the Gemini API key to the browser.
+
+### NASA API
+
+For NASA endpoints that do not require authentication, call the official data service through a controlled server-side integration where appropriate.
+
+For NASA Earthdata services requiring authentication:
+- Store credentials securely as server-side secrets.
+- Never send Earthdata passwords or tokens to the browser.
+- Use appropriate authenticated server-side data access.
+- Handle token expiration.
+- Avoid logging credentials.
+
+### Python ML API
+
+Store the Python service URL and authentication secret in server-side configuration.
+
+Protect FastAPI endpoints.
+
+Validate incoming requests.
+
+Use HTTPS.
+
+Do not allow unauthorized users to access prediction services.
+
+### Environment variables
+
+Create an .env.example file containing placeholder values only.
+
+Example:
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_PUBLISHABLE_KEY=
+
+SUPABASE_SERVICE_ROLE_KEY=
+GEMINI_API_KEY=
+NASA_EARTHDATA_USERNAME=
+NASA_EARTHDATA_PASSWORD=
+ML_API_URL=
+ML_API_SECRET=
+
+The VITE-prefixed variables must contain only browser-safe values.
+
+All other sensitive credentials must remain on the server.
+
+Never print secret values in logs, errors, screenshots or responses.
+
+### Additional security
+
+Implement:
+- HTTPS.
+- Supabase RLS.
+- Input validation.
+- Server-side authorization.
+- Rate limiting.
+- Safe error handling.
+- CORS restrictions.
+- Secure file upload validation.
+- File size restrictions.
+- SQL injection prevention.
+- XSS prevention.
+- Secure session handling.
+- Audit logging without secrets.
+- Request validation.
+- Protection against unauthorized database updates.
+
+Do not claim that API keys are encrypted merely because they are stored in environment variables. Use the hosting provider's encrypted secrets management and TLS for transmission. Use encryption at rest where supported and appropriate.
+
+---
+
+# 22. SUPABASE STORAGE
+
+Create secure storage buckets:
+
+1. soil-reports.
+2. research-reports.
+3. farm-documents.
+
+Use private buckets for user documents.
+
+Apply storage policies so users can only access authorized files.
+
+Validate uploaded file types and file sizes.
+
+Use signed URLs for temporary access to private files.
+
+---
+
+# 23. BACKEND AND API ARCHITECTURE
+
+Organize the backend into separate modules.
+
+Create routes or server functions for:
+
+- Authentication.
+- User profiles.
+- Farm management.
+- Soil profiles.
+- Crop catalog.
+- Farmer priorities.
+- NASA data retrieval.
+- Environmental analysis.
+- Crop rotation comparison.
+- ML predictions.
+- Reports.
+
+Suggested server-side structure:
+
+server/
+  routes/
+    farms.ts
+    soil.ts
+    crops.ts
+    nasa.ts
+    rotations.ts
+    reports.ts
+    ai.ts
+
+  services/
+    nasaPower.ts
+    nasaGpm.ts
+    nasaEarthdata.ts
+    gemini.ts
+    supabase.ts
+    rotationEngine.ts
+
+  middleware/
+    authentication.ts
+    authorization.ts
+    validation.ts
+    rateLimit.ts
+
+supabase/
+  migrations/
+  functions/
+
+Create reusable service functions and proper error handling.
+
+Keep NASA integrations independent from frontend components.
+
+---
+
+# 24. PYTHON MACHINE-LEARNING SERVICE
+
+Prepare a separate Python FastAPI application for Replit.
+
+Suggested structure:
+
+field-shift-ml/
+  main.py
+  requirements.txt
+
+  models/
+    climate_risk.py
+    crop_suitability.py
+    rotation_evaluation.py
+
+  services/
+    data_processing.py
+    feature_engineering.py
+    nasa_processing.py
+    model_validation.py
+
+  schemas/
+    requests.py
+    responses.py
+
+  utils/
+    security.py
+
+Create initial API endpoints:
+
+GET /health
+
+POST /climate-risk
+
+POST /crop-suitability
+
+POST /rotation-evaluation
+
+GET /model-information
+
+Use Pydantic for request validation.
+
+Use authentication for protected endpoints.
+
+Initially, implement a transparent rule-based or multi-criteria evaluation engine where appropriate.
+
+Do not pretend that untrained models are functioning machine-learning models.
+
+Add actual trained models only after obtaining suitable verified training data.
+
+---
+
+# 25. USER INTERFACE PAGES
+
+Create the following pages:
+
+Public:
+- Landing Page.
+- About Field Shift.
+- NASA Data Sources.
+- Login.
+- Registration.
+
+Farmer:
+- Farmer Dashboard.
+- My Farms.
+- Add Farm.
+- Soil Profile.
+- Environmental Monitoring.
+- Crop Rotation Explorer.
+- Farmer Priorities.
+- Alerts.
+- Reports.
+- Profile.
+
+Researcher:
+- Research Dashboard.
+- Farm Comparison.
+- NASA Data Analysis.
+- Crop Database.
+- Rotation Analysis.
+- Model Evaluation.
+- Dataset Explorer.
+- Reports.
+
+Admin:
+- User Management.
+- Crop Database Management.
+- Data Source Monitoring.
+- System Monitoring.
+
+---
+
+# 26. IMPORTANT SCIENTIFIC AND ETHICAL REQUIREMENTS
+
+This project is a decision-support tool.
+
+It must NOT replace farmer judgment, agricultural experts or local agronomic advice.
+
+Follow these principles:
+
+1. Clearly distinguish satellite observations from ground measurements.
+2. Never fabricate NASA measurements.
+3. Never fabricate soil laboratory results.
+4. Never fabricate model accuracy.
+5. Explain missing information.
+6. Explain uncertainties.
+7. Display dataset source and date.
+8. Consider local agricultural conditions.
+9. Validate crop calendars.
+10. Explain the reasons behind rotation suggestions.
+11. Avoid unsupported promises of improved yield.
+12. Allow farmers to reject or modify suggestions.
+13. Include local expert review reminders.
+14. Do not assume that a crop suitable for one Karnataka district is suitable for every district.
+
+The system should explain both benefits and trade-offs.
+
+---
+
+# 27. DEVELOPMENT ORDER
+
+Build this project in stages.
+
+Do not try to generate every feature simultaneously.
+
+### STAGE 1 – FRONTEND FOUNDATION
+
+Build:
+- Landing page.
+- Navigation.
+- Farmer dashboard.
+- Researcher dashboard.
+- Authentication screens.
+- Karnataka location selection.
+- Soil profile forms.
+- Farmer priorities.
+- Crop catalog interface.
+- Crop rotation comparison interface.
+- Interactive map layout.
+- Research charts.
+
+Use clearly labelled demonstration data.
+
+Make the frontend functional.
+
+### STAGE 2 – SUPABASE CONNECTION
+
+Connect:
+- Supabase project.
+- Authentication.
+- User profiles.
+- Farms.
+- Soil profiles.
+- Crop database.
+- Farmer priorities.
+- Rotation scenarios.
+- Storage.
+
+Create database migrations and secure RLS policies.
+
+### STAGE 3 – NASA INTEGRATION
+
+Connect:
+- NASA POWER.
+- NASA GPM.
+- NASA SMAP.
+- NASA MODIS.
+- NASA Landsat.
+- NASA ECOSTRESS.
+- NASA GRACE.
+- NASA SRTM.
+
+Use documented data services and appropriate authentication.
+
+### STAGE 4 – DATA PROCESSING
+
+Build:
+- Historical data retrieval.
+- Unit conversion.
+- Temporal aggregation.
+- Spatial alignment.
+- Missing-data handling.
+- Environmental indicators.
+- Data-quality tracking.
+
+### STAGE 5 – AI AND MACHINE LEARNING
+
+Build:
+- Climate risk analysis.
+- Crop suitability analysis.
+- Crop rotation evaluation.
+- Explainable recommendations.
+- Model validation.
+- Uncertainty reporting.
+
+### STAGE 6 – REPORTS AND RESEARCH
+
+Build:
+- PDF reports.
+- CSV exports.
+- Historical comparisons.
+- Researcher analytics.
+- Model evaluation reports.
+
+### STAGE 7 – TESTING AND DEPLOYMENT
+
+Test:
+- Authentication.
+- Authorization.
+- Database security.
+- API integrations.
+- NASA data accuracy.
+- Rotation calculations.
+- ML service.
+- Responsive layouts.
+- Error handling.
+
+Deploy the application only after security and functionality checks.
+
+---
+
+# 28. FIRST DEVELOPMENT TASK
+
+Start by generating the complete frontend foundation and application structure.
+
+Do the following first:
+
+1. Initialize the React TypeScript project.
+2. Configure Tailwind CSS.
+3. Create the complete folder structure.
+4. Create the Field Shift landing page.
+5. Create the farmer dashboard.
+6. Create the researcher dashboard.
+7. Create the navigation system.
+8. Create the soil profile forms.
+9. Create the farmer priority forms.
+10. Create the crop rotation comparison interface.
+11. Create the Karnataka map section.
+12. Create the research charts.
+13. Create the authentication interface.
+14. Prepare Supabase configuration files.
+15. Create .env.example.
+16. Create README.md.
+17. Make all primary navigation and demonstration interactions functional.
+
+Do not put real API credentials in the generated code.
+
+Use placeholders for all credentials.
+
+Do not show fake NASA data as genuine observations.
+
+Make every page visually consistent and responsive.
+
+---
+
+# 29. FINAL QUALITY REQUIREMENTS
+
+Before declaring the first milestone complete:
+
+- The application must start successfully.
+- The frontend must render without errors.
+- Navigation must work.
+- Farmer and researcher dashboards must be separate.
+- Forms must have validation.
+- The crop rotation comparison must be interactive.
+- Charts must use clearly labelled demonstration data.
+- The Karnataka map must load.
+- Responsive layouts must work.
+- Supabase integration must be prepared.
+- API secrets must not be exposed.
+- README must contain setup instructions.
+
+If an integration cannot be completed because credentials or external datasets are unavailable, build the proper integration interface and explain what is missing. Never pretend that the integration is working.
+
+**MOST IMPORTANT INSTRUCTION:**
+
+Build FIELD SHIFT as a real, technically credible NASA challenge application centered on crop rotation, soil health and climate resilience.
+
+Prioritize scientific accuracy, explainable decisions, secure architecture, farmer usability and researcher transparency.
+
+Start with Stage 1 now. Generate the project files, implement the frontend and run the application. Do not stop at a design mockup.
